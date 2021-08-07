@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin')
 const WorkboxPlugin = require('workbox-webpack-plugin')
 
@@ -12,7 +12,7 @@ module.exports = {
         Client: './src/client/index.js',
     },
     optimization: {
-        minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+        minimizer: [new TerserPlugin({}), new CssMinimizerPlugin(),],
     },
     output: {
         filename: '[name]-[hash].js',
@@ -29,7 +29,7 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test: /\.scss$/,
+                test: /.s?css$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },{
                 test: /\.(png|jpe?g|gif)$/i,
