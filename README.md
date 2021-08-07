@@ -68,5 +68,5 @@ Command | Action
 `npm run test` | Run test
 `npm run build-dev` | start the webpack dev server
 `npm run build-prod` | Build project and generate a dist folder for production
-`npm start` | Run the Express server on port 8081
+`npm run start` | Run the Express server on port 8081
 
