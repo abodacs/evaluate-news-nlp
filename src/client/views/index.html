@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Evaluate a news article or text with Aylient NLP</title>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+                Udacity
+            </div>
+            <div class="">
+                Project: Evaluate a News Article with NLP
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="article-url" type="url" name="article-url" required="required" value=""  placeholder="https:/example.com/news-article...">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+            <section>
+
+            <section>
+                <strong>Form Results:</strong>
+                <div id="polarity"></div>
+                <div id="agreement"></div>
+                <div id="subjectivity"></div>
+                <div id="confidence"></div>
+                <div id="irony"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Aylient  for Natural Language Processing</p>
+        </footer>
+        <script>
+            if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js').then(reg =>{
+                    console.log('SW registered successfuly: ', reg);
+                });
+            });
+            }
+    </script>
+    </body>
+</html>
